@@ -1,6 +1,6 @@
 #messages
-|body|image|group_id|user_id|
+| body | image | group_id | user_id |
 #users
-|name|email|password|group_id|
+| name | email | password | group_id |
 #groups
-|name|
+| name |
