@@ -12,6 +12,12 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+・messages
+|body|image|group_id|user_id|
+・users
+|name|email|password|group_id|
+・groups
+|name|
 
 * Database initialization
 
