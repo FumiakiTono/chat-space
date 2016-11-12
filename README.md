@@ -3,10 +3,13 @@
 |:-----|------:|:--------:|---------|
 |      |       |          |         |
 #users
-| name(string) | email(string) | password(string) | group_id(integer) ||
-|:-----|------:|:--------:|----------|
-|      |       |          |          |
+| name(string) | email(string) | password(string) |
+|:-----|------:|:--------:|
+|      |       |          |
 #groups
-| name(string) | user_id(integer) |
-|:-----|:-----|
-|      |      |
+| name(string) |
+|:-----|
+|      |
+#grouping
+| user_id(integer) | group_id(integer) |
+|:-------|:-------|
