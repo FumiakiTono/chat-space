@@ -10,6 +10,10 @@
 | name(string) |
 |:-----|
 |      |
-#grouping
+#users_groups
 | user_id(integer) | group_id(integer) |
 |:-------|:-------|
+#association
++------+ 1:n +--------------+n:1 +------+
+| user |<===>| users_groups |<==>| group |
++------+     +--------------+    +------+
