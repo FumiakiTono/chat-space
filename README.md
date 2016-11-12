@@ -1,12 +1,12 @@
 #messages
-| body | image | group_id | user_id |
+| body(text) | image(string) | group_id)(integer) | user_id(integer) |
 |:-----|------:|:--------:|---------|
 |      |       |          |         |
 #users
-| name | email | password | group_id |
+| name(string) | email(string) | password(string) | group_id(integer) ||
 |:-----|------:|:--------:|----------|
 |      |       |          |          |
 #groups
-| name |
-|:-----|
-|      |
+| name(string) | user_id(integer) |
+|:-----|:-----|
+|      |      |
