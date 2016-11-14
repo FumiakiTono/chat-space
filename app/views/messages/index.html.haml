@@ -1,11 +1,13 @@
 .chat
+  .chat--created チャットグループが作成されました
   .chat__user
     %p あああああ
     %i.fa.fa-cog
     %i.fa.fa-edit
   .chat__group-members
     %p Sampleグループ
-    .edit-button Edit
+    .edit-button
+      .edit-text Edit
     .group-members ああ
   .chat__group-name
     .user-name ああ
@@ -15,7 +17,8 @@
     .message-time ああ
     .message なるほど
   .chat__message--write
-    .message-type ああ
+    .message-body
+      .message-type ああ
+      %i.fa.fa-photo
     .send-button
       %p Send
-    %i.fa.fa-photo
