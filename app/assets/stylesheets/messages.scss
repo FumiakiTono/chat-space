@@ -1,0 +1,119 @@
+.chat{
+  margin: 0;
+  padding: 0;
+  .chat__user{
+    background-color: #253141;
+    height: 96px;
+    width: 15%;
+    float: left;
+    padding: 35px 20px;
+    box-sizing: border-box;
+    p{
+      line-height: 16px;
+      color : #FFFFFF;
+      font-weight: bold;
+      display: inline-block;
+    }
+    i.fa.fa-cog{
+      float: right;
+    }
+    i.fa.fa-edit{
+      float: right;
+    }
+  }
+  .chat__group-members{
+    width: 85%;
+    height: 96px;
+    float: left;
+    padding: 35px 40px 0;
+    box-sizing: border-box;
+    p{
+      float: left;
+    }
+    .edit-button{
+      float: right;
+      padding: 0px 20px;
+    }
+    .group-members{
+      clear: both;
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+  .chat__group-name{
+    width: 15%;
+    height: 640px;
+    float: left;
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    .user-name{
+      font-size: 15px;
+      color: #FFFFFF;
+      padding-bottom: 5px;
+    }
+    .user-image{
+      font-size: 11px;
+      color: #FFFFFF;
+      padding-bottom: 40px;
+    }
+  }
+  .chat__message--written{
+    width: 85%;
+    height: 550px;
+    background-color: #AAAAAA;
+    float: left;
+    padding: 46px 40px 0px 40px;
+    border-top: #eeeeee;
+    box-sizing: border-box;
+    .message-user{
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+      line-height: 10px;
+      float: left;
+    }
+    .message-time{
+      font-size: 12px;
+      color: #999999;
+      float: left;
+      margin-left: 10px;
+      line-height: 10px;
+    }
+    .message{
+      font-size: 14px;
+      color: #999999;
+      clear: both;
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+  }
+  .chat__message--write{
+    width: 85%;
+    height: 90px;
+    padding: 20px 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    .message-type{
+      font-size: 16px;
+      color: #434A54;
+      padding: 17px 0 17px 10px;
+      float: left;
+    }
+    .send-button{
+      background-color: #38AEF0;
+      float: right;
+      height: 50px;
+      margin-left: 15px;
+
+      p{
+        line-height: 16px;
+        padding: 17px;
+      }
+    }
+    i.fa.fa-photo{
+      float: right;
+      margin: 17px 10px 17px 0;
+    }
+  }
+}
