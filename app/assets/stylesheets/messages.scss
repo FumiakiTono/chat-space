@@ -23,10 +23,10 @@
       font-weight: bold;
       display: inline-block;
     }
-    i.fa.fa-cog{
+    i.icon-cog{
       float: right;
     }
-    i.fa.fa-edit{
+    i.icon-edit{
       float: right;
     }
   }
@@ -100,7 +100,7 @@
       margin-left: 10px;
       line-height: 10px;
     }
-    .message{
+    .message-text{
       font-size: 14px;
       color: #999999;
       clear: both;
@@ -131,7 +131,7 @@
         box-sizing: border-box;
         float: left;
       }
-      i.fa.fa-photo{
+      i.icon-photo{
         margin: 17px 10px 17px 0;
         float: right;
       }
