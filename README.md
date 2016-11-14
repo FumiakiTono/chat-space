@@ -1,25 +1,31 @@
 #messages
-| body | image | group_id(foreign_key) | user_id(foreign_key) |
-|:-----|------:|:--------:|---------|
-| text | string | references | references |
+| カラム名 | 型 | オプション |
+|:-----|------:|:--------:|
+| body | text | notfull |
+| image | string | |
+| group_id | references | foreign_key |
+| user_id | references | foreign_key |
 
 #users
-| name(notfull) | email(unique) | password(notfull) |
+| カラム名 | 型 | オプション |
 |:-----|------:|:--------:|
-| string | string | string |  
+| name | string | notfull |
+| email | string | unique |
+| password | string | notfull |
 *has_many :users_groups  
 *has_many :groups, through: :users_groups
 
 #groups
-| name(notfull) |
-|:-----|
-| string |  
+| カラム名 | 型 | オプション |
+|:-----|------:|:--------:|
+| name | string | notfull |
 *has_many :users_groups  
 *has_many :users, through: :users_groups
 
 #users_groups
-| user_id(foreign_key) | group_id(foreign_key) |
-|:-------|:-------|
-| references | references |  
-*belongs_to :users  
-*belongs_to :groups
+| カラム名 | 型 | オプション |
+|:-----|------:|:--------:|
+| user_id | resources | foreig_key |
+| group_id | resources | foreign_key |
+*belongs_to :user  
+*belongs_to :group
