@@ -1,10 +1,10 @@
 #messages
-| body | image | group_id | user_id |
+| body | image | group_id(foreign_key) | user_id(foreign_key) |
 |:-----|------:|:--------:|---------|
-| text | string | integer | integer |
+| text | string | references | references |
 
 #users
-| name | email | password |
+| name(notfull) | email(unique) | password(notfull) |
 |:-----|------:|:--------:|
 | string | string | string |  
 *has_many :users_groups  
@@ -18,8 +18,8 @@
 *has_many :users, through: :users_groups
 
 #users_groups
-| user_id | group_id |
+| user_id(foreign_key) | group_id(foreign_key) |
 |:-------|:-------|
-| integer | integer |  
+| references | references |  
 *belongs_to :users  
 *belongs_to :groups
