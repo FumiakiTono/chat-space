@@ -1,27 +1,25 @@
 #messages
-| body(text) | image(string) | group_id)(integer) | user_id(integer) |
+| body | image | group_id | user_id |
 |:-----|------:|:--------:|---------|
-|      |       |          |         |
+| text | string | integer | integer |
 
 #users
-| name(string) | email(string) | password(string) |
+| name | email | password |
 |:-----|------:|:--------:|
-|      |       |          |
-
-*has_many :users_groups
+| string | string | string |  
+*has_many :users_groups  
 *has_many :groups, through: :users_groups
 
 #groups
-| name(string) |
+| name |
 |:-----|
-|      |
-
-*has_many :users_groups
+| string |  
+*has_many :users_groups  
 *has_many :users, through: :users_groups
 
 #users_groups
-| user_id(integer) | group_id(integer) |
+| user_id | group_id |
 |:-------|:-------|
-
-*belongs_to :users
+| integer | integer |  
+*belongs_to :users  
 *belongs_to :groups
