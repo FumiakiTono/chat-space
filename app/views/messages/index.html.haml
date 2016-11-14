@@ -1,24 +1,27 @@
 .chat
-  .chat--created チャットグループが作成されました
-  .chat__user
-    %p あああああ
-    %i.fa.fa-cog.icon-cog
-    %i.fa.fa-edit.icon-edit
-  .chat__group-members
-    %p Sampleグループ
-    .edit-button
-      .edit-text Edit
-    .group-members ああ
-  .chat__group-name
-    .user-name ああ
-    .user-image ああ
-  .chat__message--written
-    .message-user ryosuke maehira
-    .message-time ああ
-    .message-text なるほど
-  .chat__message--write
-    .message-body
-      .message-type ああ
-      %i.fa.fa-photo.icon-photo
-    .send-button
-      %p Send
+  .layout-notice チャットグループが作成されました
+  .chat-side
+    .chat__user
+      %p あああああ
+      %i.fa.fa-cog.icon-cog
+      %i.fa.fa-edit.icon-edit
+    .chat__group-name
+      .user-name ああ
+      .user-image ああ
+  .chat-main
+    .chat-header
+      .chat-header--left
+        %p Sampleグループ
+        .group-members ああ
+      .chat-header--right
+        .chat-header__edit-btn Edit
+    .chat__message--written
+      .message-user ryosuke maehira
+      .message-time ああ
+      .message-text なるほど
+    .chat__message--write
+      .message-body
+        .message-type ああ
+        %i.fa.fa-photo.icon-photo
+      .send-button
+        %p Send
