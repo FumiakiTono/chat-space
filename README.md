@@ -11,7 +11,7 @@
 *has_many :groups, through: :users_groups
 
 #groups
-| name |
+| name(notfull) |
 |:-----|
 | string |  
 *has_many :users_groups  
