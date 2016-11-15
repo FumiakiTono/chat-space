@@ -1,0 +1,29 @@
+.alert-success{
+  background-color: #38aef0;
+  height: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color :#fff;
+  display: block;
+  text-align: center;
+
+  .close{
+    display: none;
+  }
+
+}
+
+.alert-danger{
+  background-color: #d65f4c;
+  height: 30px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color :#fff;
+  display: block;
+  text-align: center;
+
+  .close{
+    display: none;
+  }
+
+}
