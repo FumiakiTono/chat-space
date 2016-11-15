@@ -25,6 +25,7 @@ module ChatSpace
     config.generators do |g|
      g.helper false
      g.coffee false
+     g.test false
     end
     config.i18n.default_locale = :ja
   end
