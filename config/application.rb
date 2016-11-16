@@ -23,8 +23,10 @@ module ChatSpace
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.generators do |g|
-     g.helper false
-     g.coffee false
+      g.coffee false
+      g.helper false
+      g.test false
+      g.assets false
     end
     config.i18n.default_locale = :ja
   end
