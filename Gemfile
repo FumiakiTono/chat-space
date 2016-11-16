@@ -46,6 +46,8 @@ group :development do
 end
 
 gem "haml-rails", "~> 0.9"
+gem "erb2haml"
+gem "html2haml"
 gem "font-awesome-rails"
 gem "devise"
 gem "twitter-bootstrap-rails"
