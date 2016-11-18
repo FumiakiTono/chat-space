@@ -1,0 +1,10 @@
+- if error.any?
+  #error_explanation
+    %h2
+      = @group.errors.count
+      error prohibited this chat_group from being saved:
+    %ol
+      - @group.errors.full_messages.each do |msg|
+        %li= msg
+    %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+    %input{:name => "authenticity_token", :type => "hidden", :value => "AxFKlYEhD6eqX1PiZoTYQDANtKvgcFSXZQXHt5hyTl55/U/CHC5rtPavrcu2za65riz4tekZEy56vP6kEb2wYA=="}/
