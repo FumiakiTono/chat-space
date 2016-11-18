@@ -1,10 +1,12 @@
 class GroupsController < ApplicationController
+  before_action :find_group, only: [:edit, :update]
+
   def new
     @group = Group.new
   end
 
   def create
-    @group = Group.new(create_params)
+    @group = Group.new(group_params)
     if @group.save
       redirect_to controller: :messages, action: :index
     else
@@ -13,12 +15,10 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
-    if @group.update(update_params)
+    if @group.update(group_params)
       redirect_to controller: :messages, action: :index
     else
       render action: :edit
@@ -26,12 +26,12 @@ class GroupsController < ApplicationController
   end
 
   private
-  def create_params
+  def group_params
     params.require(:group).permit(:name)
   end
 
-  def update_params
-    params.require(:group).permit(:name)
+  def find_group
+    @group = Group.find(params[:id])
   end
 
 end
