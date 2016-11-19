@@ -1,27 +1,3 @@
 .chat-group-form
   %h1 チャットグループ編集
-  = form_for @group do |f|
-    = render partial: "common/error", locals: { error: @group.errors }
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :グループ名, class: "group-form__label"
-      .chat-group-form__field--right
-        = f.text_field :name, placeholder: "グループ名を入力してください"
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :チャットメンバーを追加, class: "group-form__label"
-      .chat-group-form__field--right
-        .chat-group-form__search.clearfix
-          = f.text_field :created_at, placeholder: "追加したいユーザー名を入力してください"
-        #user-search-result
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :チャットメンバー, class: "group-form__label"
-      .chat-group-form__field--right
-        #chat-group-users
-          #chat-group-user-22.chat-group-user.clearfix
-            %p.chat-group-user__name seo_kyohei
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-      .chat-group-form__field--right
-        = f.submit "Save", class: "chat-group-form__action-btn"
+  = render partial: "common/group", locals: { group: @group }
