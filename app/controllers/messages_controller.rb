@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
 
   private
   def create_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:body).merge(user_id: current_user.id )
   end
 
 end

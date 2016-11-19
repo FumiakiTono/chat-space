@@ -18,7 +18,7 @@
     .chat__message--written
       - @messages.each do |message|
         .message-user
-          =current_user.name
+          =message.user.name
         .message-time
           =message.created_at
         .message-text
