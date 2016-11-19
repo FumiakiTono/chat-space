@@ -16,12 +16,16 @@
       .chat-header--right
         .chat-header__edit-btn Edit
     .chat__message--written
-      .message-user ryosuke maehira
-      .message-time ああ
-      .message-text なるほど
+      - @messages.each do |message|
+        .message-user
+          =message.user.name
+        .message-time
+          =message.created_at
+        .message-text
+          =message.body
     .chat__message--write
-      .message-body
-        .message-type ああ
-        %i.fa.fa-photo.icon-photo
-      .send-button
-        %p Send
+      = form_for @message do |f|
+        .message-body
+          = f.text_field :body, placeholder: "type a message", class: "message-type"
+          %i.fa.fa-photo.icon-photo
+        = f.submit "Send", class: "send-button"
