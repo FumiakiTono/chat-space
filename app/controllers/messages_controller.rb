@@ -6,8 +6,11 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(create_params)
-    @message.save
-    redirect_to action: :index
+    if @message.save
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: "メッセージを入力してください"
+    end
   end
 
   private
