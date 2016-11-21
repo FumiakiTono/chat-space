@@ -9,7 +9,7 @@ describe Message do
     it "is invalid without a body" do
       message = create(:message, body: nil)
       message.valid?
-      expect(message.errors[:body]).to include "を入力してください"
+      expect(message.errors[:body]).to include("を入力してください")
     end
   end
 end
