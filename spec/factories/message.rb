@@ -6,5 +6,11 @@ FactoryGirl.define do
     group_id "0"
     user_id  "1"
   end
+  #ダミーのログインユーザーを生成
+  factory :user do
+    name  { Faker::Name.name }
+    email { Faker::Internet.email }
+    password "AAAAAAAA"
+  end
 
 end
