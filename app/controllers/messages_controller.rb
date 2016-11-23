@@ -4,12 +4,17 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+
   def create
     @message = Message.new(create_params)
-    if @message.save
-      redirect_to root_path
-    else
-      redirect_to root_path, alert: "メッセージを入力してください"
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to @message }
+        format.json { render json: { name: @message.user.name, body: @message.body, user_id: @message.user_id, created_at: @message.created_at, image: @message.image, updated_at: @message.updated_at, group_id: @message.group_id, id: @message.id } }
+      else
+        format.html { render :index }
+        format.json { redirect_to root_path, alert: "メッセージを入力してください" }
+      end
     end
   end
 
