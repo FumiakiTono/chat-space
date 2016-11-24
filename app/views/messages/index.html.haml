@@ -17,7 +17,7 @@
     .chat__message--written
       = render partial: 'message', locals: { message: @message }
     .chat__message--write
-      = form_for @message, remote: true, format: "json", html: { class: "message-form" } do |f|
+      = form_for @message, format: "json", html: { class: "message-form" } do |f|
         .message-body
           = f.text_field :body, placeholder: "type a message", class: "message-type"
           %i.fa.fa-photo.icon-photo
