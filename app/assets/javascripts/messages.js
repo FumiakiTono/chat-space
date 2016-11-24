@@ -28,7 +28,7 @@ $(function(){
         $(".message-type").val(" ");
       })
       .fail(function(data){
-        alert("メッセージが空欄のため保存されませんでした。")
+        alert("メッセージを入力してください。")
       });
   });
 });
