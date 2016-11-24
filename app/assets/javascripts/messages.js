@@ -33,5 +33,6 @@ $(function(){
       .fail(function(data){
         alert("エラーが発生しました。")
       });
+      return false;
   });
 });
