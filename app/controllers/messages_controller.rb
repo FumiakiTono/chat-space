@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
           }
         }
       else
-        format.html { redirect_to root_path alert: "メッセージを入力してください" }
+        format.html { redirect_to root_path }
         # format.json { render json: @message.errors }
       end
     end
