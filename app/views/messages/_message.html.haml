@@ -1,0 +1,8 @@
+- @messages.each do |message|
+  .message-written
+    .message-user
+      =message.user.name
+    .message-time
+      =message.created_at
+    .message-text
+      =message.body
