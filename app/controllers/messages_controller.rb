@@ -6,10 +6,14 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(create_params)
-    if @message.save
-      redirect_to root_path
-    else
-      redirect_to root_path, alert: "メッセージを入力してください"
+    respond_to do |format|
+      if @message.save
+        format.json {
+          render json: @message.create_hash(@message)
+        }
+      else
+        format.json { redirect_to root_path, alert: "メッセージを入力してください。" }
+      end
     end
   end
 
