@@ -4,14 +4,13 @@
     .chat-group-form__field--left
       = f.label :グループ名, class: "group-form__label"
     .chat-group-form__field--right
-      = f.text_field :name, placeholder: "グループ名を入力してください"
+      = f.text_field :name, class: "group-form",placeholder: "グループ名を入力してください"
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :チャットメンバーを追加, class: "group-form__label"
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        = f.collection_check_boxes :user_ids, User.all, :id, :name do |b|
-          = b.label {b.check_box + b.text}
+        = f.text_field :id, class: "group-form", placeholder: "追加したいユーザー名を入力してください"
       #user-search-result
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
@@ -19,7 +18,7 @@
     .chat-group-form__field--right
       #chat-group-users
         #chat-group-user-22.chat-group-user.clearfix
-          %p.chat-group-user__name seo_kyohei
+          / %p.chat-group-user__name seo_kyohei
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
