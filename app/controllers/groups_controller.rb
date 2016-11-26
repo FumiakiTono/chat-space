@@ -3,6 +3,11 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @users = User.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @users }
+    end
   end
 
   def create
