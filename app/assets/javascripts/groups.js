@@ -6,28 +6,23 @@ $(function(){
       "</p>"
     return member;
   }
-  $("#group_user_ids").on("keyup", function(e){
+  $("#group_user_ids").on("keypress", function(e){
     e.preventDefault();
-    $.ajax({
-      url: "/groups/new.json",
-      type: "GET",
-      dataType: "json",
-      processData: false,
-      contentType: false
-    })
-      .done(function(data){
-        input = $("#group_user_ids").val();
-        for(var i = 0; i< data.length; i = i+1 ){
-          name = data[i].name
-          if(name == input){
-            $("#chat-group-users").append(addHtml(data[i].name));
-            return false;
-          }
-        }
+    if(e.which === 13){
+      var params = { name: $("#group_user_ids").val() };
+      $.ajax({
+        url: "/groups/new.json",
+        type: "GET",
+        data: params,
+        dataType: "json"
       })
-      .fail(function(data){
-        alert("エラーが発生しました。");
-      });
-    return false;
+        .done(function(data){
+          $("#chat-group-users").append(addHtml(data.name));
+        })
+        .fail(function(data){
+          alert("エラーが発生しました。");
+        });
+      return false;
+    }
   });
 });
