@@ -3,10 +3,14 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @users = User.all
+    @user = User.where("name LIKE(?)", "%#{params[:name]}%")
+    @instance = @user[0]
+    member = @instance.name
+    # binding.pry
+    data = { name: member }
     respond_to do |format|
       format.html
-      format.json { render json: @users }
+      format.json { render json: data }
     end
   end
 
@@ -38,5 +42,9 @@ class GroupsController < ApplicationController
   def find_group
     @group = Group.find(params[:id])
   end
+
+  # def search_params
+  #   params.require(:group).permit(:user_ids)
+  # end
 
 end
