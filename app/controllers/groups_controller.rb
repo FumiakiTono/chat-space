@@ -3,10 +3,9 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @user = User.where("name LIKE(?)", "%#{params[:name]}%")
-    @instance = @user[0]
-    member = @instance.name
+    @user = User.find_by("name LIKE(?)", "%#{params[:name]}%")
     # binding.pry
+    member = @user.name
     data = { name: member }
     respond_to do |format|
       format.html
