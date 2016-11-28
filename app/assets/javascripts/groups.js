@@ -1,7 +1,7 @@
 $(function(){
-  function addHtml(name){
+  function addMember(name){
     member =
-      "<p class = 'chat-group-user__name'>"   +
+      "<p class='chat-group-user__name'>"   +
         name                             +
       "</p>"
     return member;
@@ -17,7 +17,7 @@ $(function(){
         dataType: "json"
       })
         .done(function(data){
-          $("#chat-group-users").append(addHtml(data.name));
+          $("#chat-group-users").append(addMember(data.name));
         })
         .fail(function(data){
           alert("エラーが発生しました。");
