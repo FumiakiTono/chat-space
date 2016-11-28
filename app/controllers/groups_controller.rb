@@ -42,8 +42,4 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
-  # def search_params
-  #   params.require(:group).permit(:user_ids)
-  # end
-
 end
