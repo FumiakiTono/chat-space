@@ -101,6 +101,23 @@ html{
           border-bottom: 1px solid #ddd;
           height: 50px;
         }
+
+        #user-search-result{
+
+          .chat-group-user{
+            padding: 0 15px;
+            border-bottom: 1px solid #ddd;
+            line-height: 50px;
+            font-size: 14px;
+            height: 50px;
+
+            .user-search-add{
+              float: right;
+              color: blue;
+              cursor: pointer;
+            }
+          }
+        }
       }
 
       .chat-group-form__label {
@@ -123,6 +140,8 @@ html{
       padding: 0 15px;
       line-height: 50px;
       font-size: 14px;
+      height: 50px;
+      border-bottom: 1px solid #ddd;
 
       .chat-group-user__name {
         float: left;
@@ -141,6 +160,13 @@ html{
           color: #f05050;
         }
       }
+
+      .user-search-remove{
+        float: right;
+        color: red;
+        cursor: pointer;
+      }
+
     }
 
     .chat-group-form__action-btn {

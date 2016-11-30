@@ -3,13 +3,10 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @user = User.find_by("name LIKE(?)", "%#{params[:name]}%")
-    # binding.pry
-    member = @user.name
-    data = { name: member }
+    @users = User.all.pluck(:name)
     respond_to do |format|
       format.html
-      format.json { render json: data }
+      format.json { render json: @users }
     end
   end
 
