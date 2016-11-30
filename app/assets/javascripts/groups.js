@@ -1,5 +1,5 @@
 $(function(){
-  function addMember(i,name){
+  function addMember_btn(i,name){
     member =
       "<div class=chat-group-user id=chat-group-member-"+ i +">"     +
         "<p class=chat-group-user__name>"                            +
@@ -12,7 +12,7 @@ $(function(){
     return member;
   }
 
-  function addList(i,name){
+  function addList_btn(i,name){
     list =
       "<div class=chat-group-user id=chat-group-user-"+ i +">" +
         "<p class=chat-group-user__name>"                      +
@@ -38,16 +38,16 @@ $(function(){
       .done(function(datas){
         var word = "^"+input;
         var reg = RegExp(word);
-        var preWord
+        var preWord;
         $(".chat-group-user").remove();
         if(word!=preWord && input.length!==0){
           $.each(datas, function(i, data){
             if(data.match(reg)){
-              $("#user-search-result").append(addList(i, data));
+              $("#user-search-result").append(addList_btn(i, data));
               $("#user-search-add-"+i).on("click", function(e){
                 e.preventDefault();
                 var input = $("#chat-group-user-"+i).find(".chat-group-user__name").text();
-                $("#chat-group-users").append(addMember(i, input));
+                $("#chat-group-users").append(addMember_btn(i, input));
                 $("#chat-group-user-"+i).remove();
                 $("#user-search-remove-"+i).on("click", function(e){
                     e.preventDefault();
