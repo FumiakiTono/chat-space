@@ -3,14 +3,10 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @users = User.all
-    array = []
-    @users.each do |user|
-      array << user.name
-    end
+    @users = User.all.pluck(:name)
     respond_to do |format|
       format.html
-      format.json { render json: array }
+      format.json { render json: @users }
     end
   end
 
