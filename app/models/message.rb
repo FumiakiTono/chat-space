@@ -2,6 +2,7 @@ class Message < ApplicationRecord
   belongs_to :group
   belongs_to :user
   validates :body, presence: true
+  mount_uploader :avatar, AvatarUploader
 
   def create_hash(message)
     data =
