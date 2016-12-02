@@ -20,8 +20,5 @@ CarrierWave.configure do |config|
     when 'development'
       config.fog_directory = 'dev.techcamp-chat-space.com'
       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/dev.techcamp-chat-space.com'
-    when 'test'
-      config.fog_directory = 'test.techcamp-chat-space.com'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/test.techcamp-chat-space.com'
   end
 end
