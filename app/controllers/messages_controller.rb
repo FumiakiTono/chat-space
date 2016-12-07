@@ -1,13 +1,23 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
     @message = Message.new
+    @messages = Message.all
+    array = Array.new
+    @messages.each do |message|
+      mes = message.create_hash(message)
+      array << mes
+    end
+    respond_to do |format|
+      format.html {}
+      format.json { render json: array }
+    end
   end
 
   def create
     @message = Message.new(create_params)
     respond_to do |format|
       if @message.save
+        format.html
         format.json {
           render json: @message.create_hash(@message)
         }
