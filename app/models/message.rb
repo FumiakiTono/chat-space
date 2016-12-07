@@ -10,12 +10,12 @@ class Message < ApplicationRecord
         body: message.body,
         user_id: message.user_id,
         created_at: message.created_at,
-        image: message.image,
+        image: message.image.url(:thumb),
         updated_at: message.updated_at,
         group_id: message.group_id,
         id: message.id
      }
-     return data
+    return data
   end
 
 end

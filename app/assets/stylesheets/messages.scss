@@ -17,11 +17,14 @@
         font-weight: bold;
         display: inline-block;
       }
-      i.icon-cog{
-        float: right;
-      }
-      i.icon-edit{
-        float: right;
+      .chat-user__action{
+        color: white;
+        i.icon-cog{
+          float: right;
+        }
+        i.icon-edit{
+          float: right;
+        }
       }
     }
     .chat__group-name{
@@ -85,6 +88,12 @@
       padding: 46px 40px 0px 40px;
       border-top: #eeeeee;
       box-sizing: border-box;
+      overflow: scroll;
+      width: 100%;
+      margin-bottom: 40px;
+      .message--written{
+        margin: 40px;
+      }
       .message-user{
         font-size: 16px;
         font-weight: bold;
@@ -104,13 +113,14 @@
         color: #999999;
         clear: both;
         padding-top: 10px;
-        padding-bottom: 40px;
+      }
+      .message-image{
+        margin-bottom: 40px;
       }
     }
     .chat__message--write{
       height: 90px;
       padding: 20px 40px;
-      overflow: hidden;
       box-sizing: border-box;
       background-color: #ddd;
       .message-body{
