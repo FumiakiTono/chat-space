@@ -3,26 +3,26 @@ CarrierWave.configure do |config|
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],
       :aws_secret_access_key  => ENV['AWS_SECRET_ACCESS_KEY'],
-      :region                 => ENV['AWS_REGION'],
-      :path_style             => true,
+      :region                 => "us-west-2",
+      :path_style             => true
   }
 
-  config.fog_public     = true
-  config.fog_attributes = {'Cache-Control' => 'public, max-age=86400'}
+  config.fog_public     = false
 
   case Rails.env
     when 'production'
       config.storage = :fog
-      config.fog_directory = 'techcamp-chat-space.com'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/techcamp-chat-space.com'
+      config.fog_directory = 'expert-chat-space'
+      config.asset_host = 'https://s3-us-west-2.amazonaws.com/expert-chat-space'
     when 'staging'
       config.storage = :fog
-      config.fog_directory = 'stg.techcamp-chat-space.com'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/stg.techcamp-chat-space.com'
+      config.fog_directory = 'expert-chat-space'
+      config.asset_host = 'https://s3-us-west-2.amazonaws.com/stg.expert-chat-space'
     when 'development'
+      # config.storage = :file
       config.storage = :fog
-      config.fog_directory = 'dev.techcamp-chat-space.com'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/dev.techcamp-chat-space.com'
+      config.fog_directory = 'expert-chat-space'
+      config.asset_host = 'https://s3-us-west-2.amazonaws.com/dev.expert-chat-space'
     when "test"
       config.storage = :file
   end
