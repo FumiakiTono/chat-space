@@ -2,8 +2,10 @@
   .chat-side
     .chat__user
       %p あああああ
-      %i.fa.fa-cog.icon-cog
-      %i.fa.fa-edit.icon-edit
+      %a.chat-user__action(href="/groups/new")
+        %i.fa.fa-cog.icon-cog
+      %a.chat-user__action(href="/users/edit")
+        %i.fa.fa-edit.icon-edit
     .chat__group-name
       .user-name ああ
       .user-image ああ
