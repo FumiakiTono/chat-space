@@ -40,9 +40,8 @@ function update(){
   dataType: "json"
   })
     .done(function(data){
-      console.log(data);
+      $(".message-written").remove();
       for (var i=0; i < data.length; i++){
-        $(".chat-message--written").remove();
         $(".chat__message--written").append(addHtml(data[i]));
       }
     });
@@ -66,8 +65,6 @@ $(function(){
       contentType: false
     })
       .done(function(data){
-        console.log(data);
-        console.log(data.image);
         $(".chat__message--written").append(addHtml(data));
         $(".message-type").val(" ");
       })
