@@ -1,3 +1,5 @@
+$white: white;
+
 .chat{
   margin: 0;
   padding: 0;
@@ -12,14 +14,14 @@
       padding: 35px 20px;
       box-sizing: border-box;
       p{
-        color: white;
+        color: $white;
         line-height: 16px;
         color : #FFFFFF;
         font-weight: bold;
         display: inline-block;
       }
       .chat-user__action{
-        color: white;
+        color: $white;
         i.icon-cog{
           float: right;
         }
@@ -167,7 +169,7 @@
         height: 50px;
         width: 100px;
         margin-left: 15px;
-        color: white;
+        color: $white;
         box-sizing: border-box;
         border: none;
         p{
