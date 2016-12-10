@@ -1,0 +1,13 @@
+.chat
+  .chat-side
+    .chat__user
+      %p.chat__user--current
+        = current_user.name
+      %a.chat-user__action(href="/users/edit")
+        %i.fa.fa-cog.icon-cog
+      %a.chat-user__action(href="/groups/new")
+        %i.fa.fa-edit.icon-edit
+    .chat__group-name
+      - current_user.groups.each do |group|
+        = render partial: "common/groups", locals: { group: group }
+
