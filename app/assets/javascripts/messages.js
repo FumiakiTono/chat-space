@@ -35,9 +35,9 @@ function addHtml(data){
 function update(){
   console.log('update');
   $.ajax({
-  url: "/messages.json",
-  type: "GET",
-  dataType: "json"
+    url: "./messages.json",
+    type: "GET",
+    dataType: "json"
   })
     .done(function(data){
       $(".message-written").remove();
@@ -47,30 +47,33 @@ function update(){
     });
 }
 
-
 $(function(){
 
-  var timer = setInterval(update, 10000);
+  $(document).on("turbolinks:load", function(){
+    var timer = setInterval(update, 5000);
+  })
 
-  $(".message-form").on("submit", function(e){
-    e.preventDefault();
-    var form = $(".message-form").get(0);
-    var formData = new FormData(form);
-    $.ajax({
-      url: "./messages.json",
-      type: "POST",
-      dataType: "json",
-      data: formData,
-      processData: false,
-      contentType: false
-    })
-      .done(function(data){
-        $(".chat__message--written").append(addHtml(data));
-        $(".message-type").val(" ");
+  $(document).on("turbolinks:load", function(){
+    $("#new_message").on("submit", function(e){
+      e.preventDefault();
+      var form = $("#new_message").get(0);
+      var formData = new FormData(form);
+      $.ajax({
+        url: "./messages.json",
+        type: "POST",
+        dataType: "json",
+        data: formData,
+        processData: false,
+        contentType: false
       })
-      .fail(function(data){
-        alert("エラーが発生しました。")
-      });
-      return false;
-  });
+        .done(function(data){
+          $(".chat__message--written").append(addHtml(data));
+          $("#message_body").val(" ");
+        })
+        .fail(function(data){
+          alert("エラーが発生しました。")
+        });
+        return false;
+    });
+  })
 });
