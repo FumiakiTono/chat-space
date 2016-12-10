@@ -1,3 +1,5 @@
+$white: white;
+
 .chat{
   margin: 0;
   padding: 0;
@@ -12,13 +14,14 @@
       padding: 35px 20px;
       box-sizing: border-box;
       p{
+        color: $white;
         line-height: 16px;
         color : #FFFFFF;
         font-weight: bold;
         display: inline-block;
       }
       .chat-user__action{
-        color: white;
+        color: $white;
         i.icon-cog{
           float: right;
         }
@@ -31,17 +34,20 @@
       height: 500px;
       clear: both;
       background-color: #2f3e51;
-      padding: 20px 20px 0;
       box-sizing: border-box;
-      .user-name{
+      overflow: scroll;
+      .group-link{
+        padding: 20px;
+        text-decoration: none;
+      }
+      .group-name{
         font-size: 15px;
         color: #FFFFFF;
         padding-bottom: 5px;
       }
-      .user-image{
+      .group-message{
         font-size: 11px;
         color: #FFFFFF;
-        padding-bottom: 40px;
       }
     }
   }
@@ -54,12 +60,10 @@
       box-sizing: border-box;
       .chat-header--left{
         display: inline-block;
-        p{
-          float: left;
-          margin-top: 35px;
-          margin-bottom: 15px;
-          font-size: 20px;
-        }
+        float: left;
+        margin-top: 35px;
+        margin-bottom: 15px;
+        font-size: 20px;
         .group-members{
           clear: both;
           font-size: 12px;
@@ -90,9 +94,9 @@
       box-sizing: border-box;
       overflow: scroll;
       width: 100%;
-      margin-bottom: 40px;
-      .message--written{
-        margin: 40px;
+      .message-written{
+        margin-bottom: 40px;
+
       }
       .message-user{
         font-size: 16px;
@@ -128,19 +132,19 @@
         width: 80%;
         min-width: 485px;
         height: 50px;
-        padding: 0 10px;
+        padding-right: 10px;
         display: inline-block;
         box-sizing: border-box;
         .message-type{
           font-size: 16px;
           line-height: 16px;
           color: #434A54;
-          padding: 17px 0;
           box-sizing: border-box;
           float: left;
           height: 50px;
           border: none;
           width: 90%;
+          padding-left: 10px;
         }
         .chat-footer__file{
           position: absolute;
@@ -165,7 +169,7 @@
         height: 50px;
         width: 100px;
         margin-left: 15px;
-        color: white;
+        color: $white;
         box-sizing: border-box;
         border: none;
         p{

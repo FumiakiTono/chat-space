@@ -1,25 +1,29 @@
 .chat
   .chat-side
     .chat__user
-      %p あああああ
-      %a.chat-user__action(href="/groups/new")
-        %i.fa.fa-cog.icon-cog
+      %p.chat__user--current
+        = current_user.name
       %a.chat-user__action(href="/users/edit")
+        %i.fa.fa-cog.icon-cog
+      %a.chat-user__action(href="/groups/new")
         %i.fa.fa-edit.icon-edit
     .chat__group-name
-      .user-name ああ
-      .user-image ああ
+      - current_user.groups.each do |group|
+        = render partial: "common/groups", locals: { group: group }
   .chat-main
     .chat-header
       .chat-header--left
-        %p Sampleグループ
-        .group-members ああ
+        = @group.name
+        .group-members
+          - @group.users.each do |user|
+            = user.name
       .chat-header--right
-        .chat-header__edit-btn Edit
+        = link_to edit_group_path(@group), class: "chat-header--right-link" do
+          .chat-header__edit-btn Edit
     .chat__message--written
-      = render partial: 'message', locals: { message: @message }
+      = render partial: 'message', locals: { group: @group }
     .chat__message--write
-      = form_for @message, html: { class: "message-form" } do |f|
+      = form_for [@group, @message], class: "message-form" do |f|
         .message-body
           = f.text_field :body, placeholder: "type a message", class: "message-type"
           %label.chat-footer__file

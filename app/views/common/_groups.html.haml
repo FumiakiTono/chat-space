@@ -1,0 +1,7 @@
+.group-link
+  = link_to group_messages_path(group) do
+    .group-name
+      = group.name
+    .group-message
+      - if group.messages.last
+        = group.messages.last.body

@@ -1,7 +1,10 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!, only: :index
+
   def index
     @message = Message.new
-    @messages = Message.all
+    @group = Group.find(params[:group_id])
+    @messages = Message.where(group: params[:group_id])
     array = Array.new
     @messages.each do |message|
       mes = message.create_hash(message)
@@ -11,6 +14,7 @@ class MessagesController < ApplicationController
       format.html {}
       format.json { render json: array }
     end
+    # binding.pry
   end
 
   def create
@@ -29,7 +33,7 @@ class MessagesController < ApplicationController
 
   private
   def create_params
-    params.require(:message).permit(:body, :image).merge(user_id: current_user.id)
+    params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
 end
