@@ -15,12 +15,12 @@ function addMemberBtn(id, name){
 function addListBtn(id, name){
   list =
     "<div class=chat-group-user id=chat-group-user-"+ id +">" +
-      "<p class=chat-group-user__name>"                      +
-        name                                                 +
-      "</p>"                                                 +
+      "<p class=chat-group-user__name>"                       +
+        name                                                  +
+      "</p>"                                                  +
       "<a class=user-search-add id=user-search-add-"+ id +">" +
-        '追加'                                                +
-      "</a>"                                                 +
+        '追加'                                                 +
+      "</a>"                                                  +
     "</div>"
   return list;
 };
