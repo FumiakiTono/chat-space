@@ -40,6 +40,10 @@ group :development, :test do
   gem "faker"
   # gem "rails-controller"の導入
   gem "rails-controller-testing", require: false
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -48,6 +52,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 gem "haml-rails", "~> 0.9"
