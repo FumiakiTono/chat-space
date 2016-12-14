@@ -21,11 +21,11 @@
         = link_to edit_group_path(@group), class: "chat-header--right-link" do
           .chat-header__edit-btn Edit
     .chat__message--written
-      = render partial: 'message', locals: { group: @group }
+      / = render partial: 'message', locals: { group: @group }
     .chat__message--write
       = form_for [@group, @message], class: "message-form" do |f|
         .message-body
-          = f.text_field :body, placeholder: "type a message", class: "message-type"
+          / = f.text_field :body, placeholder: "type a message", class: "message-type"
           %label.chat-footer__file
             = f.file_field :image
             %i.fa.fa-photo.icon-photo
