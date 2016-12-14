@@ -1,5 +1,5 @@
 # capistranoのバージョン固定
-lock '3.4.0'
+lock '3.7.0'
 
 # デプロイするアプリケーション名に変更してください
 set :application, 'chat-space'
