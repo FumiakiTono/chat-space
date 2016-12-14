@@ -25,8 +25,10 @@
     .chat__message--write
       = form_for [@group, @message], class: "message-form" do |f|
         .message-body
-          = f.text_field :body, placeholder: "type a message", class: "message-type"
+          - if message.body
+            = f.text_field :body, placeholder: "type a message", class: "message-type"
           %label.chat-footer__file
-            = f.file_field :image
-            %i.fa.fa-photo.icon-photo
+            - if message.image
+              = f.file_field :image
+              %i.fa.fa-photo.icon-photo
         = f.submit "Send", class: "send-button"
