@@ -34,8 +34,9 @@ function addHtml(data){
 
 function update(){
   console.log('update');
+  url = document.location.pathname
   $.ajax({
-    url: "./messages.json",
+    url: url,
     type: "GET",
     dataType: "json"
   })
@@ -58,8 +59,9 @@ $(function(){
       e.preventDefault();
       var form = $("#new_message").get(0);
       var formData = new FormData(form);
+      requestUrl = document.location.pathname;
       $.ajax({
-        url: "./messages.json",
+        url: requestUrl,
         type: "POST",
         dataType: "json",
         data: formData,
