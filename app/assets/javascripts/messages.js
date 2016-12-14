@@ -34,7 +34,7 @@ function addHtml(data){
 
 function update(){
   console.log('update');
-  url = document.location.pathname
+  url = window.location.href
   console.log(url);
   $.ajax({
     url: url,
@@ -60,7 +60,7 @@ $(function(){
       e.preventDefault();
       var form = $("#new_message").get(0);
       var formData = new FormData(form);
-      requestUrl = document.location.pathname;
+      requestUrl = window.location.href;
       console.log(requestUrl);
       $.ajax({
         url: requestUrl,
