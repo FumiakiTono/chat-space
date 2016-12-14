@@ -35,6 +35,7 @@ function addHtml(data){
 function update(){
   console.log('update');
   url = document.location.pathname
+  console.log(url);
   $.ajax({
     url: url,
     type: "GET",
