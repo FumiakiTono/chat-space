@@ -51,9 +51,9 @@ function update(){
 
 $(function(){
 
-  // $(document).on("turbolinks:load", function(){
-  //   var timer = setInterval(update, 5000);
-  // })
+  $(document).on("turbolinks:load", function(){
+    var timer = setInterval(update, 5000);
+  })
 
   $(document).on("turbolinks:load", function(){
     $("#new_message").on("submit", function(e){
