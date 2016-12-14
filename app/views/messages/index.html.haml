@@ -25,7 +25,7 @@
     .chat__message--write
       = form_for [@group, @message], class: "message-form" do |f|
         .message-body
-          = f.text_field :body, placeholder: "type a message", class: "message-type"
+          = f.text_field :body, placeholder: "メッセージを入力してください", class: "message-type"
           %label.chat-footer__file
             = f.file_field :image
             %i.fa.fa-photo.icon-photo
