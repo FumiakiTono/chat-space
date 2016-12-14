@@ -56,6 +56,7 @@ namespace :deploy do
     end
   end
 
+  after "deploy:update", "deploy:cleanup"
   after :publishing, :restart
 
   after :restart, :clear_cache do
