@@ -39,7 +39,3 @@
   after_fork do |server, worker|
     defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
   end
-
-  benfore_exec do |server|
-    ENV["BUNDLE_GEMFILE"] = "/var/www/chat-space/current/Gemfile"
-  end
