@@ -5,7 +5,7 @@ lock '3.7.0'
 set :application, 'chat-space'
 
 # cloneするgitのレポジトリに変更してください
-set :repo_url, 'https://github.com/FumiakiTono/chat-space'
+set :repo_url, 'git@github.com:FumiakiTono/chat-space.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, 'master'
